@@ -235,6 +235,104 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/18/css兼容性的处理/" itemprop="url">
+                  css兼容性的处理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-18T20:31:24+08:00" content="2016-08-18">
+              2016-08-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##1.在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</p>
+<p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
+<p>##2.android内核3.4.67版本的手机会出现绝对定位的位置问题<br>原因：特殊属性，需要特殊处理<br>解决办法：需要多加定位坐标，或者加“-webkit-”前缀</p>
+<p>##3.在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。<br>原因：父层元素会因为子元素的绝对定位而出现高度坍塌的显现。<br>解决办法：需要去掉外层div固定的高度，或者清除浮动。</p>
+<p>##4.在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。<br>原因：属性不兼容。<br>解决办法：calc属性，android4.4以上设备，改换成百分百的适配方式。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/17/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -357,7 +455,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

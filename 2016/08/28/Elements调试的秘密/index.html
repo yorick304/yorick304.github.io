@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="Tomorrow">
 <meta property="og:description" content="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。Elememts 画板打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。
 1.鼠标选中节点，这时会发现Elements面板中的DOM树发生变化：选">
-<meta property="og:updated_time" content="2016-08-28T01:23:22.000Z">
+<meta property="og:updated_time" content="2016-08-28T01:26:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elements调试的秘密">
 <meta name="twitter:description" content="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。Elememts 画板打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。
@@ -284,11 +284,8 @@
 <p>2.增加、删除和修改DOM节点<br>Edit text（编辑文本）：编辑该节点中的文本。也可以在文本处双击进行编辑。<br>Edit as HTML（编辑HTML）：编辑该节点及其子节点的所有HTML元素（包括节点中的文本）。<br>Copy as HTML（复制HTML）：复制该节点及其子节点的所有HTML元素（HTML文档）。<br>Copy XPath（复制XPath路径）：复制该节点的XPath路径，即DOM层次路径。例如，</p><p>节点的XPath路径为 /html/body/div/p 。<br>Delete node（删除节点）：删除该节点及其子节点的所有HTML元素。也可以使用 Backspace 和 Delete 键删除。<br>Inspect DOM properties（审查DOM属性）：在控制台中显示该节点的所有标准属性（如果有的话）。<br>Word wrap（自动换行）：HTML代码是否自动换行。</p>
 <p>对 Inspect DOM properties（审查DOM属性）的说明：<br>为</p><p>节点添加id属性，如下：</p>
 <p></p><p id="demo"><a href="http://www.demo.com" target="_blank" rel="external">http://www.demo.com</a></p><br>会在控制台输出p#demo；再向<p>节点添加class属性和name属性，如下：</p>
-<p></p><p id="demo" class="demo" data="demo"><a href="http://www.dom.com" target="_blank" rel="external">http://www.dom.com</a></p><br>会在控制台输出p#demo.demo。<p></p>
-<p>可见，控制台只会输出符合W3C标准的属性，不支持自定义属性。不过，实际开发中很少用到该功能。</p>
-<p>另外，我们也可以通过拖动节点来改变节点的顺序，双击属性节点来改变它的值。</p>
-<h2 id="查看css样式"><a href="#查看css样式" class="headerlink" title="查看css样式"></a>查看css样式</h2><p>CSS样式审查面板是一个非常有用的面板，实际开发中，有时候CSS样式表会非常复杂，甚至连我们自己都不知道当前节点应用了哪些样式。使用CSS样式审查面板，可以让我们清楚地知道当前节点使用了哪些样式，分别来自哪些文件，哪些样式是被覆盖的，哪些样式是最终样式，哪些样式是无效的，等等。</p>
-<p>在CSS样式审查面板中，我们可以添加、删除和修改CSS样式。</p>
+<p></p><p id="demo" class="demo" data="demo"><a href="http://www.dom.com" target="_blank" rel="external">http://www.dom.com</a></p><br>会在控制台输出p#demo.demo。<br>可见，控制台只会输出符合W3C标准的属性，不支持自定义属性。不过，实际开发中很少用到该功能。<br>另外，我们也可以通过拖动节点来改变节点的顺序，双击属性节点来改变它的值。<p></p>
+<h2 id="查看css样式"><a href="#查看css样式" class="headerlink" title="查看css样式"></a>查看css样式</h2><p>CSS样式审查面板是一个非常有用的面板，实际开发中，有时候CSS样式表会非常复杂，甚至连我们自己都不知道当前节点应用了哪些样式。使用CSS样式审查面板，可以让我们清楚地知道当前节点使用了哪些样式，分别来自哪些文件，哪些样式是被覆盖的，哪些样式是最终样式，哪些样式是无效的，等等。<br>在CSS样式审查面板中，我们可以添加、删除和修改CSS样式。</p>
 <p>子面板说明：</p>
 <ol>
 <li>Style（样式）：当前节点的样式；</li>

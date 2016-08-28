@@ -235,6 +235,119 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/28/Elements调试的秘密/" itemprop="url">
+                  Elements调试的秘密
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T08:44:13+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。"><a href="#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。" class="headerlink" title="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。"></a>最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结。。。。。。</h1><h2 id="Elememts-画板"><a href="#Elememts-画板" class="headerlink" title="Elememts 画板"></a>Elememts 画板</h2><p>打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。</p>
+<p>1.鼠标选中节点，这时会发现Elements面板中的DOM树发生变化：<br>选中的的节点在DOM树中被精确定位（蓝色背景），可以看到被选中节点的DOM层次（红色方框），在面板右侧，是选中节点的CSS样式。</p>
+<p>2.增加、删除和修改DOM节点<br>Edit text（编辑文本）：编辑该节点中的文本。也可以在文本处双击进行编辑。<br>Edit as HTML（编辑HTML）：编辑该节点及其子节点的所有HTML元素（包括节点中的文本）。<br>Copy as HTML（复制HTML）：复制该节点及其子节点的所有HTML元素（HTML文档）。<br>Copy XPath（复制XPath路径）：复制该节点的XPath路径，即DOM层次路径。例如，</p><p>节点的XPath路径为 /html/body/div/p 。<br>Delete node（删除节点）：删除该节点及其子节点的所有HTML元素。也可以使用 Backspace 和 Delete 键删除。<br>Inspect DOM properties（审查DOM属性）：在控制台中显示该节点的所有标准属性（如果有的话）。<br>Word wrap（自动换行）：HTML代码是否自动换行。</p>
+<p>对 Inspect DOM properties（审查DOM属性）的说明：<br>为</p><p>节点添加id属性，如下：</p>
+<p></p><p id="demo"><a href="http://www.demo.com" target="_blank" rel="external">http://www.demo.com</a></p><br>会在控制台输出p#demo；再向<p>节点添加class属性和name属性，如下：</p>
+<p></p><p id="demo" class="demo" data="demo"><a href="http://www.dom.com" target="_blank" rel="external">http://www.dom.com</a></p><br>会在控制台输出p#demo.demo。<p></p>
+<p>可见，控制台只会输出符合W3C标准的属性，不支持自定义属性。不过，实际开发中很少用到该功能。</p>
+<p>另外，我们也可以通过拖动节点来改变节点的顺序，双击属性节点来改变它的值。</p>
+<h2 id="查看css样式"><a href="#查看css样式" class="headerlink" title="查看css样式"></a>查看css样式</h2><p>CSS样式审查面板是一个非常有用的面板，实际开发中，有时候CSS样式表会非常复杂，甚至连我们自己都不知道当前节点应用了哪些样式。使用CSS样式审查面板，可以让我们清楚地知道当前节点使用了哪些样式，分别来自哪些文件，哪些样式是被覆盖的，哪些样式是最终样式，哪些样式是无效的，等等。</p>
+<p>在CSS样式审查面板中，我们可以添加、删除和修改CSS样式。</p>
+<p>子面板说明：</p>
+<ol>
+<li>Style（样式）：当前节点的样式；</li>
+<li>Computed（计算）：查看当前节点经过计算后的样式以及盒模型数据；</li>
+<li>Event Listeners（事件监听）：查看为当前节点绑定的事件和事件监听函数；</li>
+<li>DOM Breakpoints（DOM断点）：查看为当前节点设置的DOM断点；</li>
+<li>Properties（属性）：当前节点（对象）的所有属性。</li>
+</ol>
+<p>###【小技巧】使用键盘方向键改变数值<br>查看</p><p>节点的样式，选中 padding 的值，按下键盘方向键（&lt;- 和 -&gt;）数值会跟着改变，页面上</p><p>节点的样式也立刻改变。实际开发中，会经常使用该方法来微调元素的外边距、内补白和大小等、，非常方便。</p>
+<p>###【小技巧】颜色拾取器<br>查看</p><p>节点的样式，如【图2.3】所示，选中 background-color 后边的小图标，会弹出颜色拾取器，能够很方便的改变背景颜色。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/18/css兼容性的处理/" itemprop="url">
                   css兼容性的处理
                 </a>
@@ -454,7 +567,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

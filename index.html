@@ -265,6 +265,119 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/29/编写高效的javascript/" itemprop="url">
+                  编写高效的javascript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-29T20:39:51+08:00" content="2016-08-29">
+              2016-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="编写高效的javascript"><a href="#编写高效的javascript" class="headerlink" title="编写高效的javascript"></a>编写高效的javascript</h1><ol>
+<li>当执行javascript代码时，javascript引擎会创建一个执行上下文。执行上下文设定了代码执行时所处的环境。javascript引擎会在页面加载后创建一个全局执行上下文，然后每执行一个函数都会创建一个对应的执行上下文，最终建立一个执行上下文的堆栈，当前起作用的执行上下文在堆栈的最顶部。</li>
+<li>使用局部变量：这样使得在使用变量的适合能够再堆栈的顶部找到变量，而不需要增加在作用域链中查找的时间。</li>
+<li>使用with会加深作用域链，建议不使用。</li>
+<li>try-catch也会加深作用域链，因为在catch块中会在作用域的顶部加了一个异常的对象，但是是在发生错误的时候才执行，所以它比with语句的影响要小。</li>
+<li>数据在脚本中存储的位置直接影响脚本执行的总耗时，脚本中有四种地方可以存取数据<br>a.字面量值<br>b.变量<br>c.数组元素<br>d.对象属性</li>
+<li>控制流，流控制是提升javascript性能最重要的一环，用switch语句简化了多重条件判断的结构，并且提升性能,避免使用for-in循环，它用来遍历javascript对象的可枚举属性。</li>
+<li>字符串优化：字符串的连接应该避免使用加法运算符（+）来完成，然后我们使用javascript的Array对象有一个join方法，用来连接数组中的所有元素并且在元素之间插入指定的字符串。开发者把字符串添加到数组中然后通过join方法来连接字符串，这样就避免了使用加法运算符。</li>
+<li>避免运行时间过长的脚本<br>a.过多的DOM操作。<br>b.过多的循环。<br>c.过多的递归。</li>
+<li>使用定时器挂起，使用setTimeout函数传递需要执行的函数及延迟执行该函数的时间，延迟执行脚本的时间。</li>
+</ol>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
+<li>管理作用域非常重要，因为存取非局部变量比局部变量耗时更多。</li>
+<li>存储和读取数据的方式对脚本性能影响极大。</li>
+<li>控制流也是影响脚本执行速度的一个重要因素。</li>
+<li>在javascript中循环经常会成为性能瓶颈。</li>
+<li>谨慎使用HTMLCollection对象。</li>
+<li>常见的字符串操作可能会带来意料之外的性能问题。</li>
+<li>浏览器会限制Javascript可以运行的最长时间，有些会执行语句的数量作为判断条件，有些则会控制javascript引擎执行的总时间。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/28/Elements调试的秘密/" itemprop="url">
                   Elements调试的秘密
                 </a>
@@ -594,7 +707,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

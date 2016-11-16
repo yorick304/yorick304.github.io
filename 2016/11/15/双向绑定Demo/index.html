@@ -5,67 +5,16 @@
   
   <title>双向绑定实现 | Tomorrow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="双向数据绑定
-值和UI双绑定
-各种数据相互依赖相互绑定
-数据问题的源头难以被跟踪到
-
-
-
-思想
-订阅发布模式。
-数据劫持。
-
-工具准备
-实现⼀一个数据监听器Observer
-实现⼀一个指令解析器Compile
-实现一个Watcher 
-MVVM⼊入⼜⼝口函数
-
-Observer用于定义属性，将属性定义在定义在Object.defineProperty()中这是实现双向绑定的核心函数12345678">
+  <meta name="description" content="对比angularjs和vuejs学习双向绑定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="双向绑定实现">
 <meta property="og:url" content="http://yoursite.com/2016/11/15/双向绑定Demo/index.html">
 <meta property="og:site_name" content="Tomorrow">
-<meta property="og:description" content="双向数据绑定
-值和UI双绑定
-各种数据相互依赖相互绑定
-数据问题的源头难以被跟踪到
-
-
-
-思想
-订阅发布模式。
-数据劫持。
-
-工具准备
-实现⼀一个数据监听器Observer
-实现⼀一个指令解析器Compile
-实现一个Watcher 
-MVVM⼊入⼜⼝口函数
-
-Observer用于定义属性，将属性定义在定义在Object.defineProperty()中这是实现双向绑定的核心函数12345678">
-<meta property="og:updated_time" content="2016-11-16T06:12:16.000Z">
+<meta property="og:description" content="对比angularjs和vuejs学习双向绑定">
+<meta property="og:updated_time" content="2016-11-16T13:24:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="双向绑定实现">
-<meta name="twitter:description" content="双向数据绑定
-值和UI双绑定
-各种数据相互依赖相互绑定
-数据问题的源头难以被跟踪到
-
-
-
-思想
-订阅发布模式。
-数据劫持。
-
-工具准备
-实现⼀一个数据监听器Observer
-实现⼀一个指令解析器Compile
-实现一个Watcher 
-MVVM⼊入⼜⼝口函数
-
-Observer用于定义属性，将属性定义在定义在Object.defineProperty()中这是实现双向绑定的核心函数12345678">
+<meta name="twitter:description" content="对比angularjs和vuejs学习双向绑定">
   
     <link rel="alternative" href="/atom.xml" title="Tomorrow" type="application/atom+xml">
   
@@ -116,7 +65,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
         </hgroup>
 
         
-        <p class="header-subtitle">跟别人学，跟自己比</p>
+        <p class="header-subtitle">learning&amp;speaking</p>
         
         
         
@@ -173,7 +122,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
                         
                             <li><a href="/about">留言打卡</a></li>
                         
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/tags">静心阅读</a></li>
                         
                         </ul>
                     </nav>
@@ -195,7 +144,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
                     </div>
                 </section>
                 
@@ -239,7 +188,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
               <h1 class="header-author"><a href="/" title="Me">yuliang</a></h1>
             </hgroup>
             
-            <p class="header-subtitle">跟别人学，跟自己比</p>
+            <p class="header-subtitle">learning&amp;speaking</p>
             
             <nav class="header-menu">
                 <ul>
@@ -250,7 +199,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
                 
                     <li><a href="/about">留言打卡</a></li>
                 
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/tags">静心阅读</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -298,6 +247,10 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -343,7 +296,7 @@ Observer用于定义属性，将属性定义在定义在Object.defineProperty()�
         <p><span>本文标题:</span><a href="/2016/11/15/双向绑定Demo/">双向绑定实现</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 yuliang 的个人博客">yuliang</a></p>
         <p><span>发布时间:</span>2016年11月15日 - 22时28分</p>
-        <p><span>最后更新:</span>2016年11月16日 - 14时12分</p>
+        <p><span>最后更新:</span>2016年11月16日 - 21时24分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/15/双向绑定Demo/" title="双向绑定实现">http://yoursite.com/2016/11/15/双向绑定Demo/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/15/双向绑定Demo/　　作者: yuliang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

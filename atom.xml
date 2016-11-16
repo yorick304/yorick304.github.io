@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-11-16T06:12:16.000Z</updated>
+  <updated>2016-11-16T13:24:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/11/15/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9ADemo/"/>
     <id>http://yoursite.com/2016/11/15/双向绑定Demo/</id>
     <published>2016-11-15T14:28:54.000Z</published>
-    <updated>2016-11-16T06:12:16.000Z</updated>
+    <updated>2016-11-16T13:24:36.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><ul>
 <li><code>值和UI双绑定</code><ul>
@@ -53,13 +53,12 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;双向数据绑定&quot;&gt;&lt;a href=&quot;#双向数据绑定&quot; class=&quot;headerlink&quot; title=&quot;双向数据绑定&quot;&gt;&lt;/a&gt;双向数据绑定&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;值和UI双绑定&lt;/code&gt;&lt;ul&gt;
-&lt;li&gt;各种数据相互依赖相互绑定&lt;/li&gt;
-&lt;
+      对比angularjs和vuejs学习双向绑定
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -68,7 +67,7 @@
     <link href="http://yoursite.com/2016/08/29/%E7%BC%96%E5%86%99%E9%AB%98%E6%95%88%E7%9A%84javascript/"/>
     <id>http://yoursite.com/2016/08/29/编写高效的javascript/</id>
     <published>2016-08-29T12:39:51.000Z</published>
-    <updated>2016-08-29T12:47:21.000Z</updated>
+    <updated>2016-11-16T13:25:23.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><ol>
 <li>当执行javascript代码时，javascript引擎会创建一个执行上下文。执行上下文设定了代码执行时所处的环境。javascript引擎会在页面加载后创建一个全局执行上下文，然后每执行一个函数都会创建一个对应的执行上下文，最终建立一个执行上下文的堆栈，当前起作用的执行上下文在堆栈的最顶部。</li>
@@ -94,11 +93,12 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;读书笔记&quot;&gt;&lt;a href=&quot;#读书笔记&quot; class=&quot;headerlink&quot; title=&quot;读书笔记&quot;&gt;&lt;/a&gt;读书笔记&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;当执行javascript代码时，javascript引擎会创建一个执行上下文。执行上下文设定了代码执行时所处的
+      高效编写javascript的习惯
     
     </summary>
     
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -107,7 +107,7 @@
     <link href="http://yoursite.com/2016/08/28/Elements%E8%B0%83%E8%AF%95%E7%9A%84%E7%A7%98%E5%AF%86/"/>
     <id>http://yoursite.com/2016/08/28/Elements调试的秘密/</id>
     <published>2016-08-28T00:44:13.000Z</published>
-    <updated>2016-08-28T09:32:46.000Z</updated>
+    <updated>2016-11-16T13:26:46.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"><a href="#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结" class="headerlink" title="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"></a>最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结</h1><h2 id="Elememts-画板"><a href="#Elememts-画板" class="headerlink" title="Elememts 画板"></a>Elememts 画板</h2><p>打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。</p>
 <p>1.鼠标选中节点，这时会发现Elements面板中的DOM树发生变化：<br>选中的的节点在DOM树中被精确定位（蓝色背景），可以看到被选中节点的DOM层次（红色方框），在面板右侧，是选中节点的CSS样式。</p>
@@ -130,10 +130,12 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结&quot;&gt;&lt;a href=&quot;#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结
+      chrome中对Elements的学习和研究
     
     </summary>
     
+    
+      <category term="tools" scheme="http://yoursite.com/tags/tools/"/>
     
   </entry>
   
@@ -142,7 +144,7 @@
     <link href="http://yoursite.com/2016/08/18/css%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/"/>
     <id>http://yoursite.com/2016/08/18/css兼容性的处理/</id>
     <published>2016-08-18T12:31:24.000Z</published>
-    <updated>2016-08-18T13:06:50.000Z</updated>
+    <updated>2016-11-16T13:25:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><a href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。" class="headerlink" title="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。"></a>在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</h2><p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
 <h2 id="android内核3-4-67版本的手机会出现绝对定位的位置问题"><a href="#android内核3-4-67版本的手机会出现绝对定位的位置问题" class="headerlink" title="android内核3.4.67版本的手机会出现绝对定位的位置问题"></a>android内核3.4.67版本的手机会出现绝对定位的位置问题</h2><p>原因：特殊属性，需要特殊处理<br>解决办法：需要多加定位坐标，或者加“-webkit-”前缀</p>
@@ -152,10 +154,12 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。&quot;&gt;&lt;a href=&quot;#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。&quot; class=&quot;headerlink&quot; title=&quot;在android4.
+      css处理工作中的兼容性问题
     
     </summary>
     
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
     
   </entry>
   
@@ -164,7 +168,7 @@
     <link href="http://yoursite.com/2016/08/17/hello-world/"/>
     <id>http://yoursite.com/2016/08/17/hello-world/</id>
     <published>2016-08-17T14:35:32.000Z</published>
-    <updated>2016-11-13T14:55:59.000Z</updated>
+    <updated>2016-11-16T13:27:04.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -178,7 +182,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#
+      Hello World
     
     </summary>
     

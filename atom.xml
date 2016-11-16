@@ -1,254 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
   <title>Tomorrow</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tomorrow">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Tomorrow">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tomorrow">
   
-    <link rel="alternative" href="/atom.xml" title="Tomorrow" type="application/atom+xml">
+  <link href="/atom.xml" rel="self"/>
   
+  <link href="http://yoursite.com/"/>
+  <updated>2016-11-16T06:12:16.000Z</updated>
+  <id>http://yoursite.com/</id>
   
-    <link rel="icon" href="/img/favicon.png">
-  
-  
-      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
+  <author>
+    <name>yuliang</name>
     
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>双向绑定实现</title>
+    <link href="http://yoursite.com/2016/11/15/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9ADemo/"/>
+    <id>http://yoursite.com/2016/11/15/双向绑定Demo/</id>
+    <published>2016-11-15T14:28:54.000Z</published>
+    <updated>2016-11-16T06:12:16.000Z</updated>
     
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="/img/title.png" class="js-avatar">
-            
-        </a>
-
-        <hgroup>
-          <h1 class="header-author"><a href="/" title="Hi Mate">yuliang</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">跟别人学，跟自己比</p>
-        
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/works">作品展示</a></li>
-                        
-                            <li><a href="/about">留言打卡</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                            
-                                <a class="fl github" target="_blank" href="https://github.com/yuliangyang1" title="github">github</a>
-                            
-                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">luuman</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">yuliang</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/title.png" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me">yuliang</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">跟别人学，跟自己比</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/works">作品展示</a></li>
-                
-                    <li><a href="/about">留言打卡</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/yuliangyang1" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-                    
-                </div>
-            </nav>
-        </header>                
-    </div>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-双向绑定Demo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/15/双向绑定Demo/" class="article-date">
-      <time datetime="2016-11-15T14:28:54.000Z" itemprop="datePublished">2016-11-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/双向绑定Demo/">双向绑定实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><ul>
+    <content type="html"><![CDATA[<h2 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h2><ul>
 <li><code>值和UI双绑定</code><ul>
 <li>各种数据相互依赖相互绑定</li>
 <li>数据问题的源头难以被跟踪到</li>
@@ -275,60 +49,28 @@
 <ul>
 <li><a href="https://github.com/yuliangyang1/vm" target="_blank" rel="external">demo</a>  </li>
 </ul>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编写高效的javascript" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/29/编写高效的javascript/" class="article-date">
-      <time datetime="2016-08-29T12:39:51.000Z" itemprop="datePublished">2016-08-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+      &lt;h2 id=&quot;双向数据绑定&quot;&gt;&lt;a href=&quot;#双向数据绑定&quot; class=&quot;headerlink&quot; title=&quot;双向数据绑定&quot;&gt;&lt;/a&gt;双向数据绑定&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;值和UI双绑定&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;各种数据相互依赖相互绑定&lt;/li&gt;
+&lt;
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
+  </entry>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/29/编写高效的javascript/">编写高效的javascript</a>
-    </h1>
-  
-
-      </header>
-      
+  <entry>
+    <title>编写高效的javascript</title>
+    <link href="http://yoursite.com/2016/08/29/%E7%BC%96%E5%86%99%E9%AB%98%E6%95%88%E7%9A%84javascript/"/>
+    <id>http://yoursite.com/2016/08/29/编写高效的javascript/</id>
+    <published>2016-08-29T12:39:51.000Z</published>
+    <updated>2016-08-29T12:47:21.000Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><ol>
+    <content type="html"><![CDATA[<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><ol>
 <li>当执行javascript代码时，javascript引擎会创建一个执行上下文。执行上下文设定了代码执行时所处的环境。javascript引擎会在页面加载后创建一个全局执行上下文，然后每执行一个函数都会创建一个对应的执行上下文，最终建立一个执行上下文的堆栈，当前起作用的执行上下文在堆栈的最顶部。</li>
 <li>使用局部变量：这样使得在使用变量的适合能够再堆栈的顶部找到变量，而不需要增加在作用域链中查找的时间。</li>
 <li>使用with会加深作用域链，建议不使用。</li>
@@ -348,60 +90,26 @@
 <li>常见的字符串操作可能会带来意料之外的性能问题。</li>
 <li>浏览器会限制Javascript可以运行的最长时间，有些会执行语句的数量作为判断条件，有些则会控制javascript引擎执行的总时间。</li>
 </ol>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Elements调试的秘密" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/28/Elements调试的秘密/" class="article-date">
-      <time datetime="2016-08-28T00:44:13.000Z" itemprop="datePublished">2016-08-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+      &lt;h1 id=&quot;读书笔记&quot;&gt;&lt;a href=&quot;#读书笔记&quot; class=&quot;headerlink&quot; title=&quot;读书笔记&quot;&gt;&lt;/a&gt;读书笔记&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;当执行javascript代码时，javascript引擎会创建一个执行上下文。执行上下文设定了代码执行时所处的
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
+  </entry>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/28/Elements调试的秘密/">Elements调试的秘密</a>
-    </h1>
-  
-
-      </header>
-      
+  <entry>
+    <title>Elements调试的秘密</title>
+    <link href="http://yoursite.com/2016/08/28/Elements%E8%B0%83%E8%AF%95%E7%9A%84%E7%A7%98%E5%AF%86/"/>
+    <id>http://yoursite.com/2016/08/28/Elements调试的秘密/</id>
+    <published>2016-08-28T00:44:13.000Z</published>
+    <updated>2016-08-28T09:32:46.000Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"><a href="#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结" class="headerlink" title="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"></a>最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结</h1><h2 id="Elememts-画板"><a href="#Elememts-画板" class="headerlink" title="Elememts 画板"></a>Elememts 画板</h2><p>打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。</p>
+    <content type="html"><![CDATA[<h1 id="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"><a href="#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结" class="headerlink" title="最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结"></a>最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结</h1><h2 id="Elememts-画板"><a href="#Elememts-画板" class="headerlink" title="Elememts 画板"></a>Elememts 画板</h2><p>打开Element面板，可以查看所有DOM节点，包括CSS和JavaScript，如下图所示，左侧为DOM树，右侧为CSS样式。这个选项是所有Dom元素节点的样式具体展示。</p>
 <p>1.鼠标选中节点，这时会发现Elements面板中的DOM树发生变化：<br>选中的的节点在DOM树中被精确定位（蓝色背景），可以看到被选中节点的DOM层次（红色方框），在面板右侧，是选中节点的CSS样式。</p>
 <p>2.增加、删除和修改DOM节点<br>Edit text（编辑文本）：编辑该节点中的文本。也可以在文本处双击进行编辑。<br>Edit as HTML（编辑HTML）：编辑该节点及其子节点的所有HTML元素（包括节点中的文本）。<br>Copy as HTML（复制HTML）：复制该节点及其子节点的所有HTML元素（HTML文档）。<br>Copy XPath（复制XPath路径）：复制该节点的XPath路径，即DOM层次路径。例如，选中的节点的XPath路径为 /html/body/div/p 。<br>Delete node（删除节点）：删除该节点及其子节点的所有HTML元素。也可以使用 Backspace 和 Delete 键删除。<br>Inspect DOM properties（审查DOM属性）：在控制台中显示该节点的所有标准属性（如果有的话）。<br>Word wrap（自动换行）：HTML代码是否自动换行。</p>
 <p>对 Inspect DOM properties（审查DOM属性）的说明：<br>为节点添加id属性。<br>会在控制台输出p#demo；再向节点添加class属性和name属性。<br>会在控制台输出p#demo.demo。<br>可见，控制台只会输出符合W3C标准的属性，不支持自定义属性。不过，实际开发中很少用到该功能。<br>另外，我们也可以通过拖动节点来改变节点的顺序，双击属性节点来改变它的值。</p>
@@ -418,117 +126,47 @@
 <h3 id="【小技巧】颜色拾取器"><a href="#【小技巧】颜色拾取器" class="headerlink" title="【小技巧】颜色拾取器"></a>【小技巧】颜色拾取器</h3><p>查看节点的样式,选中 background-color 后边的小图标，会弹出颜色拾取器，能够很方便的改变背景颜色。</p>
 <h3 id="【小技巧】新增样式类的使用"><a href="#【小技巧】新增样式类的使用" class="headerlink" title="【小技巧】新增样式类的使用"></a>【小技巧】新增样式类的使用</h3><p>在新增样式节点的时候，可以自己添加自己的伪类：比如before，after等处理。</p>
 <h3 id="【小技巧】animate-的使用"><a href="#【小技巧】animate-的使用" class="headerlink" title="【小技巧】animate 的使用"></a>【小技巧】animate 的使用</h3><p>在进行动画效果的设计的时候，可以定位到不同的百分位进行动画效果样式的编写。</p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css兼容性的处理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/18/css兼容性的处理/" class="article-date">
-      <time datetime="2016-08-18T12:31:24.000Z" itemprop="datePublished">2016-08-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+      &lt;h1 id=&quot;最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结&quot;&gt;&lt;a href=&quot;#最近在进行模板的开发，多chrome浏览器的elements元素使用的频率较多，对自己用到的功能模块和使用的技巧进行总结
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
+  </entry>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/18/css兼容性的处理/">css兼容性的处理</a>
-    </h1>
-  
-
-      </header>
-      
+  <entry>
+    <title>css兼容性的处理</title>
+    <link href="http://yoursite.com/2016/08/18/css%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E5%A4%84%E7%90%86/"/>
+    <id>http://yoursite.com/2016/08/18/css兼容性的处理/</id>
+    <published>2016-08-18T12:31:24.000Z</published>
+    <updated>2016-08-18T13:06:50.000Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><a href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。" class="headerlink" title="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。"></a>在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</h2><p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
+    <content type="html"><![CDATA[<h2 id="在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><a href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。" class="headerlink" title="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。"></a>在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</h2><p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
 <h2 id="android内核3-4-67版本的手机会出现绝对定位的位置问题"><a href="#android内核3-4-67版本的手机会出现绝对定位的位置问题" class="headerlink" title="android内核3.4.67版本的手机会出现绝对定位的位置问题"></a>android内核3.4.67版本的手机会出现绝对定位的位置问题</h2><p>原因：特殊属性，需要特殊处理<br>解决办法：需要多加定位坐标，或者加“-webkit-”前缀</p>
 <h2 id="在三星9300（android4-0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。"><a href="#在三星9300（android4-0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。" class="headerlink" title="在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。"></a>在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。</h2><p>原因：父层元素会因为子元素的绝对定位而出现高度坍塌的显现。<br>解决办法：需要去掉外层div固定的高度，或者清除浮动。</p>
 <h2 id="在三星9300（android4-0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。"><a href="#在三星9300（android4-0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。" class="headerlink" title="在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。"></a>在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。</h2><p>原因：属性不兼容。<br>解决办法：calc属性，android4.4以上设备，改换成百分百的适配方式。</p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/17/hello-world/" class="article-date">
-      <time datetime="2016-08-17T14:35:32.000Z" itemprop="datePublished">2016-08-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+      &lt;h2 id=&quot;在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。&quot;&gt;&lt;a href=&quot;#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。&quot; class=&quot;headerlink&quot; title=&quot;在android4.
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
+  </entry>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/08/17/hello-world/"/>
+    <id>http://yoursite.com/2016/08/17/hello-world/</id>
+    <published>2016-08-17T14:35:32.000Z</published>
+    <updated>2016-11-13T14:55:59.000Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -536,125 +174,15 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
+      &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+    
+  </entry>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2016 yuliang
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-
-    </div>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
-  </div>
-</body>
-</html>
+</feed>

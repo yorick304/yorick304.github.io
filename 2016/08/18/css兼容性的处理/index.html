@@ -1,667 +1,525 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <!-- Title -->
-    
-    <title>
-        css兼容性的处理 | Tomorrow
-    </title>
-    
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-    
-    <!-- Meta & INfo -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#039BE5">
-    <meta name="author" content="yuliang">
-    <meta name="description" content="null">
-    <meta name="keywords" content="null">
-    
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-    
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Tomorrow">
-    
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="css兼容性的处理 | Tomorrow">
-    <meta property="og:description" content="null">
-    
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-    
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-<!-- Theme Background -->
-
-    <style>
-        body{
-            background-color: #F5F5F5
-        }
-		
-        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-            background-color: #fff;
-        }
-		
-        #scheme-Paradox .MD-burger-layer {
-            background-color: #666;
-        }
-		
-        #scheme-Paradox .material-back{
-            color: #666;
-        }
-		
-        .material-layout .material-post>.material-nav,
-		.material-layout .material-index>.material-nav,
-        .material-nav a,
-        #scheme-Paradox .material-post_container .material-back{
-            color: #666;
-        }
-    </style>
-
-
-<!-- Fade Effect -->
-
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
-
-
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #039BE5
-    }
-    
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #039BE5 !important
-    }
-    
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #00BCD4 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #039BE5 !important
-    }
-    
-    .fab{
-        background: #00BCD4 !important
-    }
-</style>
-	<script src="/js/jquery.min.js"></script>
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    
+<head>
+  <meta charset="utf-8">
+  
+  <title>css兼容性的处理 | Tomorrow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。原因：手机内核解析的差异，层级严格划分解决办法：使用在：position :absolute的元素     -webkit-transform:translateZ(0);
+android内核3.4.67版本的手机会出现绝对定位的位置问题原因：特殊属性，需要特殊处理解决办法：需要多加定位坐标，或者加“-webkit-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css兼容性的处理">
+<meta property="og:url" content="http://yoursite.com/2016/08/18/css兼容性的处理/index.html">
+<meta property="og:site_name" content="Tomorrow">
+<meta property="og:description" content="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。原因：手机内核解析的差异，层级严格划分解决办法：使用在：position :absolute的元素     -webkit-transform:translateZ(0);
+android内核3.4.67版本的手机会出现绝对定位的位置问题原因：特殊属性，需要特殊处理解决办法：需要多加定位坐标，或者加“-webkit-">
+<meta property="og:updated_time" content="2016-08-18T13:06:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css兼容性的处理">
+<meta name="twitter:description" content="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。原因：手机内核解析的差异，层级严格划分解决办法：使用在：position :absolute的元素     -webkit-transform:translateZ(0);
+android内核3.4.67版本的手机会出现绝对定位的位置问题原因：特殊属性，需要特殊处理解决办法：需要多加定位坐标，或者加“-webkit-">
+  
+    <link rel="alternative" href="/atom.xml" title="Tomorrow" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-	
-	
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
 
-    <body id="scheme-Paradox">
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">yuliang</a></h1>
+        </hgroup>
 
-		
-        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-				
-			
-			
-            <!-- Main Container -->
-            <main class="material-layout__content" id="main">
-				
-                <!-- Top Anchor -->
-                <div id="top"></div>
-				
-				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
-				
-                
-	<!-- Back Button -->
-	<div class="material-back" id="backhome-div" tabindex="0">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#" onclick="window.history.back();return false;" target="_self" role="button" data-upgraded=",MaterialButton,MaterialRipple">
-			<i class="material-icons" role="presentation">arrow_back</i>
-			<span class="mdl-button__ripple-container">
-				<span class="mdl-ripple"></span>
-			</span>
-		</a>
-	</div>			
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-	<!-- Paradox Post Header -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-				<script>
-    
-    var randomNum;
-    randomNum = Math.floor(Math.random() * 5 + 1);
-    
-    $(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')');
-    
-</script>
-
-		
-	
-        <p class="article-headline-p">
-            css兼容性的处理
-        </p>
-    </div>
-
-	
-
-				
-				
-					<!-- Paradox Post Info -->
-					<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-    
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/images/title.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>yuliang</strong>
-        <span>8月 18, 2016</span>
-    </div>
-    
-    <div class="section-spacer"></div>
-	
-    <!-- Favorite -->
-<!--
-    <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-        <i class="material-icons" role="presentation">favorite</i>
-        <span class="visuallyhidden">favorites</span>
-    </button>
--->
-    
-    <!-- Tags (bookmark) -->
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
         
-    </ul>
-    
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    
-    
-    
-    
-    <!-- Share Twitter -->
-    <a class="post_share-link" href="https://twitter.com/intent/tweet?text=css兼容性的处理&url=http://yoursite.com//2016/08/18/css兼容性的处理/index.html&via=yuliang" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 Twitter
-        </li>
-    </a>
-    
-    <!-- Share Google+ -->
-    <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com//2016/08/18/css兼容性的处理/index.html" target="_blank">
-        <li class="mdl-menu__item">
-            分享到 Google+
-        </li>
-    </a>
-    
-    <!-- Share Weibo -->
-    <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=css兼容性的处理&url=http://yoursite.com//2016/08/18/css兼容性的处理/index.html&pic=&searchPic=false&style=simple" target="_blank">
-        <li class="mdl-menu__item">
-            分享到微博
-        </li>
-    </a>
-</ul>
-</div>
-				
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-                <!-- Post Content -->
-                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-	
-		<h2 id="在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><a href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。" class="headerlink" title="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。"></a>在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</h2><p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/Home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">yuliang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">yuliang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/Home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-css兼容性的处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/18/css兼容性的处理/" class="article-date">
+      <time datetime="2016-08-18T12:31:24.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css兼容性的处理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><a href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。" class="headerlink" title="在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。"></a>在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</h2><p>原因：手机内核解析的差异，层级严格划分<br>解决办法：使用在：position :absolute的元素<br>     -webkit-transform:translateZ(0);</p>
 <h2 id="android内核3-4-67版本的手机会出现绝对定位的位置问题"><a href="#android内核3-4-67版本的手机会出现绝对定位的位置问题" class="headerlink" title="android内核3.4.67版本的手机会出现绝对定位的位置问题"></a>android内核3.4.67版本的手机会出现绝对定位的位置问题</h2><p>原因：特殊属性，需要特殊处理<br>解决办法：需要多加定位坐标，或者加“-webkit-”前缀</p>
 <h2 id="在三星9300（android4-0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。"><a href="#在三星9300（android4-0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。" class="headerlink" title="在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。"></a>在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。</h2><p>原因：父层元素会因为子元素的绝对定位而出现高度坍塌的显现。<br>解决办法：需要去掉外层div固定的高度，或者清除浮动。</p>
 <h2 id="在三星9300（android4-0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。"><a href="#在三星9300（android4-0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。" class="headerlink" title="在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。"></a>在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。</h2><p>原因：属性不兼容。<br>解决办法：calc属性，android4.4以上设备，改换成百分百的适配方式。</p>
 
-	
-	
-	
-	
-</div>
-				
-				
-
-                <!-- Post Comments -->
-                
-
-
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+      
+    </div>
     
-    <!-- Prev Nav -->
+  </div>
+  
     
-        <a href="/2016/08/28/Elements调试的秘密/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/08/18/css兼容性的处理/">css兼容性的处理</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 yuliang 的个人博客">yuliang</a></p>
+        <p><span>发布时间:</span>2016年08月18日 - 20时31分</p>
+        <p><span>最后更新:</span>2016年08月18日 - 21时06分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/18/css兼容性的处理/" title="css兼容性的处理">http://yoursite.com/2016/08/18/css兼容性的处理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/18/css兼容性的处理/　　作者: yuliang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
 
-    <!-- Next Nav -->
-    
-        <a href="/2016/08/17/hello-world/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
+
+<nav id="article-nav">
+  
+    <a href="/2016/08/28/Elements调试的秘密/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Elements调试的秘密
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
 </nav>
-        </div>
-    </div>
 
-				
-				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
+  
+</article>
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/images/title.png" alt="yuliang's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        yangyuliang@weidian.com
-        <b class="caret"></b>
-    </a>
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在android4-0系列的手机上回出现层级上（z-index）的渲染效果的差异。"><span class="toc-number">1.</span> <span class="toc-text">在android4.0系列的手机上回出现层级上（z-index）的渲染效果的差异。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#android内核3-4-67版本的手机会出现绝对定位的位置问题"><span class="toc-number">2.</span> <span class="toc-text">android内核3.4.67版本的手机会出现绝对定位的位置问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在三星9300（android4-0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。"><span class="toc-number">3.</span> <span class="toc-text">在三星9300（android4.0系列）手机进行列表适配的时候，div外层的height会崩塌，是因为内层存在绝对定位的元素。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在三星9300（android4-0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。"><span class="toc-number">4.</span> <span class="toc-text">在三星9300（android4.0系列）的手机在itemList模块在样式中使用calc属性计算，会出现机器适配的问题。</span></a></li></ol>
 </div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
 
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             主页
-        </a>
-    </li>
-
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
-
-	
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             归档
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">4</span></a>
-        </ul>
-    </li>
-
-    <!-- Divider -->
-    <li class="divider"></li>
-
-
-    <!-- Pages  -->
-	
-		<li>
-			<a href="/about" title="关于">
-				关于
-			</a>
-		</li>
-	
-	
-
-    <!-- Article Numebr  -->
-    <li>
-        <a href="#">
-             文章总数
-             <span class="sidebar-badge">5</span>
-        </a>
-    </li>
-</ul>
-
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
-
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持。 :) 
--->
-
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		主题 - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
-
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
-
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
-
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
-
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
-
-
-</aside>
-
-				
-				
-				
-					<!-- Floating Action Button -->
-<div class="fabs">
-    <a href="#top" class="fab toTop">
-        <i class="material-icons">expand_less</i>
-    </a>
-    
-    
-        <!-- Post Nav -->
-        
-            <a class="prev-content fab" href="/2016/08/28/Elements调试的秘密/" title="Elements调试的秘密"><i class="material-icons">keyboard_arrow_left</i></a>
-        
-
-        
-            <a class="prev-content fab" href="/2016/08/17/hello-world/" title="Hello World"><i class="material-icons">keyboard_arrow_right</i></a>
-        
-    
-    
-    
-    
-    <a href="#bottom" class="fab toBottom">
-        <i class="material-icons">keyboard_arrow_down</i>
-    </a>
-    
-    <a id="prime" class="fab">
-        <i class="material-icons prime-i-add">add</i>
-    </a>
-</div>
-				
-				
-				<!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    
-    
-    <!-- Facebook -->
-    
-    
-    
-    <!-- Google + -->
-    
-    
-    
-    <!-- Weibo -->
-    
-    
-    
-    <!-- Instagram -->
-    
-    
-    
-    <!-- Tumblr -->
-    
-    
-    
-    <!-- Github -->
-    
-    <a href="https://github.com/yuliangyang1" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
-        <span class="visuallyhidden">Github</span>
-    </button></a>
-    
-</div>
-
-
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;Tomorrow</div>
-
-		<!-- Paradox Footer Right Section -->
-
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
-
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
-
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<!-- 
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-				-->
-			</div>
-		</div>
-	
-    
-</footer>
-                
-				<!-- Import File -->
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
-    
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
 </script>
 
 
-	<script src="/js/smoothscroll.js"></script>
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/08/18/css兼容性的处理/" data-title="css兼容性的处理" data-url="http://yoursite.com/2016/08/18/css兼容性的处理/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
 
 
 
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/08/28/Elements调试的秘密/" title="上一篇: Elements调试的秘密">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/08/17/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/双向绑定Demo/">双向绑定实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/编写高效的javascript/">编写高效的javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/28/Elements调试的秘密/">Elements调试的秘密</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/18/css兼容性的处理/">css兼容性的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 
-
-
-
-
-
-
-
-
-	<script>
-		$(".fabs").mouseleave(function(){
-			if( $("#prime").hasClass("is-visible") )
-				$("#prime").click();
-		});
-	</script>
-
-            </main>
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 yuliang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
         </div>
-		
-    </body>
-		
-	
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
 </html>

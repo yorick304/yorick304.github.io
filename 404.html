@@ -531,15 +531,24 @@
 
     <script type="text/javascript">
       var path = "/search.xml";
+      var $resetButton = $("#search-form .fa-times");
+      var $resultArea = $("#local-search-result");
       window.onload = function(){
         var inputArea = document.querySelector("#local-search-input");
+        resetSearch = function(){
+            $resultArea.html("");
+            document.querySelector("#search-form").reset();
+            $resetButton.hide();
+            $(".no-result").hide();
+        }
         var getSearchFile = function(){
             var path = "/search.xml";
             search(path, 'local-search-input', 'local-search-result');
         }
-
-        inputArea.onfocus = function(){ getSearchFile() }
-
+        inputArea.onfocus = function(){
+           $resetButton.show(); 
+          getSearchFile()
+        }
         document.getElementById("local-search-input").onclick = function(){
             console.log("search")
             search(path, 'local-search-input', 'local-search-result');

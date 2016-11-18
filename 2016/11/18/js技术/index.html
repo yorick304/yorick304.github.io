@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js技术 | Tomorrow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自己学习js的归纳总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js技术">
+<meta property="og:url" content="http://yuliangyang1.github.io/2016/11/18/js技术/index.html">
+<meta property="og:site_name" content="Tomorrow">
+<meta property="og:description" content="自己学习js的归纳总结">
+<meta property="og:updated_time" content="2016-11-18T16:16:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js技术">
+<meta name="twitter:description" content="自己学习js的归纳总结">
+  
+    <link rel="alternative" href="/atom.xml" title="Tomorrow" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/title.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi All">Yorick</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">learning&amp;speaking</p>
+        
+        
+            <!--<form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>-->
+
+            <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>No results found </p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/yuliangyang1" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.404forest.com/">jin</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Yorick</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/title.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Yorick</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">learning&amp;speaking</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/yuliangyang1" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-js技术" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/18/js技术/" class="article-date">
+      <time datetime="2016-11-18T15:30:39.000Z" itemprop="datePublished">2016-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js技术
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="考察this"><a href="#考察this" class="headerlink" title="考察this"></a>考察this</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> length = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.length);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">length</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">method</span>: <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">        fn();</div><div class="line">        <span class="built_in">arguments</span>[<span class="number">0</span>]();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.method(fn,<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输出：10 2<br>第一次输出10应该没有问题。我们知道取对象属于除了点操作符还可以用中括号，所以第二次执行时相当于arguments调用方法，this指向arguments，而这里传了两个参数，故输出arguments长度为2。</p>
+</blockquote>
+<hr>
+<h2 id="var和函数的提前声明"><a href="#var和函数的提前声明" class="headerlink" title="var和函数的提前声明"></a>var和函数的提前声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (f === <span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> b = <span class="number">20</span>;</div><div class="line">    c = <span class="number">30</span>;</div><div class="line">&#125;</div><div class="line">fn();</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"><span class="built_in">console</span>.log(c);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输出：10 报错 30<br>这是个我犯了很久的错误，很长一段时间我都以为{…}内的新声明的变量是局部变量，后来我才发现function内的新声明的变量才是局部变量，而没有用var声明的变量在哪里都是全局变量。再次提醒切记只有function(){}内新声明的才能是局部变量，while{…}、if{…}、for(..)之内的都是全局变量（除非本身包含在function内）。</p>
+</blockquote>
+<hr>
+<h2 id="变量隐式声明"><a href="#变量隐式声明" class="headerlink" title="变量隐式声明"></a>变量隐式声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="string">'a'</span><span class="keyword">in</span>  <span class="built_in">window</span>) &#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line">alert(a);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>答案：10<br>前面我说过function和var会提前声明，而其实{…}内的变量也会提前声明。于是代码还没执行前，a变量已经被声明，于是 ‘a’ in window 返回true，a被赋值。</p>
+</blockquote>
+<h2 id="给基本类型数据添加属性，不报错，但取值时是undefined"><a href="#给基本类型数据添加属性，不报错，但取值时是undefined" class="headerlink" title="给基本类型数据添加属性，不报错，但取值时是undefined"></a>给基本类型数据添加属性，不报错，但取值时是undefined</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</div><div class="line">a.pro= <span class="number">10</span>;</div><div class="line"><span class="built_in">console</span>.log(a.pro+ a);</div><div class="line"><span class="keyword">var</span> s = <span class="string">'hello'</span>;</div><div class="line">s.pro = <span class="string">'world'</span>;</div><div class="line"><span class="built_in">console</span>.log(s.pro+ s);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>答案：NaN undefinedhello<br>给基本类型数据加属性不报错，但是引用的话返回undefined，10+undefined返回NaN，而undefined和string相加时转变成了字符串。</p>
+</blockquote>
+<h2 id="函数声明优于变量声明"><a href="#函数声明优于变量声明" class="headerlink" title="函数声明优于变量声明"></a>函数声明优于变量声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> fn);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> fn;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>答案：function</p>
+<h2 id="因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。"><a href="#因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。" class="headerlink" title="因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。"></a>因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。</h2></blockquote>
+<h2 id="判断一个字符串中出现次数最多的字符，并统计次数"><a href="#判断一个字符串中出现次数最多的字符，并统计次数" class="headerlink" title="判断一个字符串中出现次数最多的字符，并统计次数"></a>判断一个字符串中出现次数最多的字符，并统计次数</h2><h3 id="hash-table方式"><a href="#hash-table方式" class="headerlink" title="hash table方式"></a>hash table方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'aaabbbcccaaabbbaaa'</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> maxn = <span class="number">-1</span>;</div><div class="line"><span class="keyword">var</span> letter;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (obj[s[i]]) &#123;</div><div class="line">        obj[s[i]]++;</div><div class="line">        <span class="keyword">if</span> (obj[s[i]] &gt; maxn) &#123;</div><div class="line">            maxn = obj[s[i]];</div><div class="line">            letter = s[i];</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        obj[s[i]] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span> (obj[s[i]] &gt; maxn) &#123;</div><div class="line">            maxn = obj[s[i]];</div><div class="line">            letter = s[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">alert(letter + <span class="string">':'</span> + maxn);</div></pre></td></tr></table></figure>
+<h3 id="正则方式"><a href="#正则方式" class="headerlink" title="正则方式"></a>正则方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">'aaabbbcccaaabbbaaabbbbbbbbbb'</span>;</div><div class="line"><span class="keyword">var</span> a = s.split(<span class="string">''</span>);</div><div class="line">a.sort();</div><div class="line">s = a.join(<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> pattern = <span class="regexp">/(\w)\1*/g</span>;</div><div class="line"><span class="keyword">var</span> ans = s.match(pattern);</div><div class="line">ans.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a.length &lt; b.length;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(ans[<span class="number">0</span>][<span class="number">0</span>]+ <span class="string">':'</span> + ans[<span class="number">0</span>].length);</div></pre></td></tr></table></figure>
+<h2 id="经典闭包"><a href="#经典闭包" class="headerlink" title="经典闭包"></a>经典闭包</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--</span></div><div class="line"> 实现一段脚本，使得点击对应链接alert出相应的编号 --&gt;</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=utf-8"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'#'</span>&gt;</span>第一个链接 <span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'#'</span>&gt;</span>第二个链接 <span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'#'</span>&gt;</span>第三个链接 <span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'#'</span>&gt;</span> 第四个链接 <span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;/<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="dom污染法"><a href="#dom污染法" class="headerlink" title="dom污染法"></a>dom污染法</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!--实现一段脚本，使得点击对应链接alert出相应的编号 --&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;a href='#'&gt;第一个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第二个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第三个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第四个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;script type="text/javascript"&gt;</div><div class="line">    var lis = document.links;</div><div class="line">    for(var i = 0, length = lis.length; i &lt; length; i++) &#123;</div><div class="line">      lis[i].index = i;</div><div class="line">      lis[i].onclick= function()</div><div class="line">        &#123;</div><div class="line">            alert(this.index);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!--实现一段脚本，使得点击对应链接alert出相应的编号 --&gt;</div><div class="line">&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;a href='#'&gt; 第一个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第二个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第三个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;a href='#'&gt;第四个链接 &lt;/a&gt; &lt;/br&gt;</div><div class="line">  &lt;script type="text/javascript"&gt;</div><div class="line">    var lis = document.links;</div><div class="line">    for(var i = 0, length = lis.length; i &lt; length; i++) &#123;</div><div class="line">      (function(i)</div><div class="line">        &#123;</div><div class="line">            lis[i].onclick= function()</div><div class="line">            &#123;</div><div class="line">                alert(i+ 1);</div><div class="line">            &#125;;</div><div class="line">      &#125;)(i);</div><div class="line">    &#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">JSClass</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.m_Text = <span class="string">'divisionelement'</span>;</div><div class="line">  <span class="keyword">this</span>.m_Element = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">  <span class="keyword">this</span>.m_Element.innerHTML = <span class="keyword">this</span>.m_Text;</div><div class="line">  <span class="keyword">this</span>.m_Element.addEventListener(<span class="string">'click'</span>,<span class="keyword">this</span>.func);</div><div class="line">  <span class="comment">//</span></div><div class="line"> <span class="keyword">this</span>.m_Element.onclick = <span class="keyword">this</span>.func;</div><div class="line">&#125;</div><div class="line"></div><div class="line">JSClass.prototype.Render = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">document</span>.body.appendChild(<span class="keyword">this</span>.m_Element);</div><div class="line">&#125;</div><div class="line">JSClass.prototype.func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line"></div><div class="line">  alert(<span class="keyword">this</span>.m_Text);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> jc = <span class="keyword">new</span></div><div class="line">JSClass();</div><div class="line">jc.Render(); </div><div class="line"><span class="comment">//add div</span></div><div class="line">jc.func(); </div><div class="line"><span class="comment">//输出 division element</span></div><div class="line"><span class="comment">//click添加的div元素division</span></div><div class="line"><span class="comment">//element会输出underfined，为什么？</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>答案：division element undefined<br>第一次输出很好理解，第二次的话仔细看，this其实已经指向了this.m_Element，因为是this.m_Element调用的addEventListener函数，所以内部的this全指向它了。可以试着加上一行代码this.m_Element.m_Text = ‘hello world’，就会alert出hello world了。</p>
+</blockquote>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><p>请编写一个JavaScript函数 parseQueryString，它的用途是把URL参数解析为一个对象，如： var url=”<a href="http://witmax.cn/index.php?key0=0&amp;key1=1&amp;key2=2" target="_blank" rel="external">http://witmax.cn/index.php?key0=0&amp;key1=1&amp;key2=2</a>“</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseQueryString</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">    <span class="keyword">var</span> a = url.split(<span class="string">'?'</span>);</div><div class="line">    <span class="keyword">if</span> (a === <span class="number">1</span>) <span class="keyword">return</span></div><div class="line">    obj;</div><div class="line">    <span class="keyword">var</span> b = a[<span class="number">1</span>].split(<span class="string">'&amp;'</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, length = b.length; i &lt; length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> c = b[i].split(<span class="string">'='</span>);</div><div class="line">        obj[c[<span class="number">0</span>]] = c[<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span></div><div class="line">    obj;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> url = <span class="string">'http://witmax.cn/index.php?key0=0&amp;key1=1&amp;key2=2'</span>;</div><div class="line"><span class="keyword">var</span> obj = parseQueryString(url);</div><div class="line"><span class="built_in">console</span>.log(obj.key0, obj.key1, obj.key2); <span class="comment">//</span></div><div class="line"><span class="number">0</span> <span class="number">1</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/11/18/js技术/">js技术</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Yorick 的个人博客">Yorick</a></p>
+        <p><span>发布时间:</span>2016年11月18日 - 23时30分</p>
+        <p><span>最后更新:</span>2016年11月19日 - 00时16分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/18/js技术/" title="js技术">http://yuliangyang1.github.io/2016/11/18/js技术/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yuliangyang1.github.io/2016/11/18/js技术/　　作者: Yorick" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/15/双向绑定Demo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">双向绑定实现</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#考察this"><span class="toc-number">1.</span> <span class="toc-text">考察this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#var和函数的提前声明"><span class="toc-number">2.</span> <span class="toc-text">var和函数的提前声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量隐式声明"><span class="toc-number">3.</span> <span class="toc-text">变量隐式声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#给基本类型数据添加属性，不报错，但取值时是undefined"><span class="toc-number">4.</span> <span class="toc-text">给基本类型数据添加属性，不报错，但取值时是undefined</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数声明优于变量声明"><span class="toc-number">5.</span> <span class="toc-text">函数声明优于变量声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。"><span class="toc-number">6.</span> <span class="toc-text">因为函数声明优于变量声明。我们知道在代码逐行执行前，函数声明和变量声明会提前进行，而函数声明又会优于变量声明，这里的优于可以理解为晚于变量声明后，如果函数名和变量名相同，函数声明就能覆盖变量声明。所以以上代码将函数声明和变量声明调换顺序还是一样结果。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断一个字符串中出现次数最多的字符，并统计次数"><span class="toc-number">7.</span> <span class="toc-text">判断一个字符串中出现次数最多的字符，并统计次数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hash-table方式"><span class="toc-number">7.1.</span> <span class="toc-text">hash table方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则方式"><span class="toc-number">7.2.</span> <span class="toc-text">正则方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典闭包"><span class="toc-number">8.</span> <span class="toc-text">经典闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dom污染法"><span class="toc-number">8.1.</span> <span class="toc-text">dom污染法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">8.2.</span> <span class="toc-text">闭包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-number">9.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">10.</span> <span class="toc-text">split</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/11/18/js技术/" data-title="js技术" data-url="http://yuliangyang1.github.io/2016/11/18/js技术/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yuliangyang"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/11/15/双向绑定Demo/" title="下一篇: 双向绑定实现">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/18/js技术/">js技术</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/双向绑定Demo/">双向绑定实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/29/编写高效的javascript/">编写高效的javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/28/Elements调试的秘密/">Elements调试的秘密</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/18/css兼容性的处理/">css兼容性的处理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/17/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Yorick
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      var path = "/search.xml";
+      var $resetButton = $("#search-form .fa-times");
+      var $resultArea = $("#local-search-result");
+      window.onload = function(){
+        var inputArea = document.querySelector("#local-search-input");
+        resetSearch = function(){
+            $resultArea.html("");
+            document.querySelector("#search-form").reset();
+            $resetButton.hide();
+            $(".no-result").hide();
+        }
+        var getSearchFile = function(){
+            var path = "/search.xml";
+            search(path, 'local-search-input', 'local-search-result');
+        }
+        inputArea.onfocus = function(){
+           $resetButton.show(); 
+          getSearchFile()
+        }
+        document.getElementById("local-search-input").onclick = function(){
+            console.log("search")
+            search(path, 'local-search-input', 'local-search-result');
+        }
+      }
+
+      function search(path, search_id, content_id){
+         'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length <= 0) {
+                    return;
+                }
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ "> " + data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out characters
+                            var start = first_occur - 6;
+                            var end = first_occur + 6;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 10;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substr(start, end); 
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
+                            })
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                    }
+                })
+                $resultContent.innerHTML = str;
+            })
+        }
+    })
+
+        
+      }
+    </script>
+
+  </div>
+</body>
+</html>

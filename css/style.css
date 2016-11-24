@@ -3688,6 +3688,9 @@ pre .link_url {
 .back_home a:hover {
   color: #6e6e6e;
 }
+.ds-comment-body p {
+  color: #f7f7f7;
+}
 .share:hover a:last-child::after {
   content: "\f029"; /*fa fa-qrcode*/
   font: 28px FontAwesome;

@@ -4,6 +4,105 @@
   
     
     <entry>
+      <title><![CDATA[vue颜色选择器]]></title>
+      <url>http://yuliangyang1.github.io/2017/04/23/vue%E9%A2%9C%E8%89%B2%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="ANALYZE"><a href="#ANALYZE" class="headerlink" title="ANALYZE"></a>ANALYZE</h1><p>在学习vue的过程中小试牛刀，顺便总结在这个过程中的收获和遇到的坑。在学习过程中转换了原来使用angularjs的思维来进行编写代码，组件的概念深入人心，页面由组件构成。<br>在编写vueColorPicker的过程中，组件减少多外部的依赖，而是专注于完成指定的功能，这个功能独立单一，便于提炼为了让组件更加具有灵活性和可配置性，需要向外提供更规范的props。</p>
+<ul>
+<li><code>特点</code><ul>
+<li>用以激活HTML5颜色面板</li>
+<li>颜色显示小方块</li>
+<li>颜色色盘</li>
+<li>标准颜色</li>
+<li>向外广播选择的颜色，方便父级元素的接收</li>
+</ul>
+</li>
+</ul>
+<h1 id="PICKER"><a href="#PICKER" class="headerlink" title="PICKER"></a>PICKER</h1><ul>
+<li>git地址：<a href="https://github.com/yuliangyang1/vueColorPicker" title="vue-coloful-picker" target="_blank" rel="external">vue-coloful-picker</a></li>
+</ul>
+<blockquote>
+<p>selectColor</p>
+</blockquote>
+<h2 id="SHOW"><a href="#SHOW" class="headerlink" title="SHOW"></a>SHOW</h2><p><img src="https://si.geilicdn.com/bj-app-1138109942-1492853419553-404563483_872_576.jpg" alt="Alt text"></p>
+<p><img src="https://si.geilicdn.com/bj-app-1138109942-1492853441479-1742097411_424_616.jpg" alt="Alt text"></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save vue-colorfule-picker</div></pre></td></tr></table></figure>
+<h2 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h2><h3 id="Import-for-global"><a href="#Import-for-global" class="headerlink" title="Import for global"></a>Import for global</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import colorPicker from &apos;vue-colorfule-picker&apos;</div><div class="line">Vue.use(colorPicker)</div></pre></td></tr></table></figure>
+<h3 id="Import-for-local"><a href="#Import-for-local" class="headerlink" title="Import for local"></a>Import for local</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import colorPicker from &apos;vue-colorfule-picker&apos;</div><div class="line"> </div><div class="line">export default &#123;</div><div class="line">  components: &#123;</div><div class="line">    colorPicker,</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;color-picker v-if=&quot;display&quot; :color=&quot;color&quot;  @change=&quot;changeColor&quot; :defaultColor=&apos;color&apos; :width=&quot;62&quot; :height=&quot;18&quot; :boxTop=&quot;18&quot; :boxLeft=&quot;-100&quot;&gt;&lt;/color-picker&gt;</div></pre></td></tr></table></figure>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>string</td>
+<td>当前颜色值</td>
+</tr>
+<tr>
+<td>defaultColor</td>
+<td>String</td>
+<td>默认颜色</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Boolean</td>
+<td>禁用状态</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Number</td>
+<td>方块选择器的宽度(px)</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Number</td>
+<td>方块选择器的高度(px)</td>
+</tr>
+<tr>
+<td>boxTop</td>
+<td>Number</td>
+<td>选择筐顶部定位(px)</td>
+</tr>
+<tr>
+<td>boxLeft</td>
+<td>Number</td>
+<td>选择框左边定位</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><table>
+<thead>
+<tr>
+<th>事件名</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td></td>
+<td>通过emit的方式向父级元素广播颜色值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="PUBLISH"><a href="#PUBLISH" class="headerlink" title="PUBLISH"></a>PUBLISH</h2><ol>
+<li><p>规范的组件导出编写</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> colorPicker <span class="keyword">from</span> <span class="string">'../component/index.js'</span></div><div class="line"><span class="keyword">const</span> install = <span class="function"><span class="keyword">function</span>(<span class="params">Vue</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(install.installed) &#123;</div><div class="line">    <span class="keyword">return</span></div><div class="line">  &#125;</div><div class="line">  Vue.component(colorPicker.name, colorPicker)</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">window</span>.Vue) &#123;</div><div class="line">  install(<span class="built_in">window</span>.Vue)</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> version = <span class="string">'0.0.1'</span></div><div class="line"><span class="keyword">export</span> &#123;</div><div class="line">  install,</div><div class="line">  version,</div><div class="line">  colorPicker</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>umd方式，main入口引入umd打包的文件</p>
+</li>
+<li>vue源码形式，但是需要配合vue-loader来使用</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[js技术]]></title>
       <url>http://yuliangyang1.github.io/2016/11/18/js%E6%8A%80%E6%9C%AF/</url>
       <content type="html"><![CDATA[<h2 id="考察this"><a href="#考察this" class="headerlink" title="考察this"></a>考察this</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> length = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.length);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">length</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">method</span>: <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</div><div class="line">        fn();</div><div class="line">        <span class="built_in">arguments</span>[<span class="number">0</span>]();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">obj.method(fn,<span class="number">1</span>);</div></pre></td></tr></table></figure>
